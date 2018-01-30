@@ -1,0 +1,41 @@
+<!-- SIDENAV HEADER -->
+<div class="header header-offset" layout="column" layout-align="space-between start">
+
+    <div class="logo" layout="row" layout-align="start center">
+        <span class="logo-icon">
+          <img src="app/core/app_icons/api_app_icon.png" alt=""/>
+        </span>
+        <span class="logo-text">API</span>
+    </div>
+
+
+</div>
+<!-- / SIDENAV HEADER -->
+
+<!-- SIDENAV CONTENT -->
+<md-content ms-scroll class="content" flex>
+    <div class="preloader" ng-if="!isApiListLoaded">
+        <md-progress-circular></md-progress-circular>
+    </div>
+    <div class="navigation-simple" layout="column">
+        <!--<md-button type="submit" class="item" aria-label="inbox" form="urlForm" >-->
+        <md-button class="item" ng-class="{'selected':selectedUrl == api.name}" aria-label="inbox" ng-click="selectedUrl_(api)" ng-repeat="api in vm.apiList" ng-if="api.name != 'Settings API' && api.name != 'Plan API' && api.name != 'Subscription-Offline' && api.name != 'Subscription-Online'">
+            <div layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-cloud-outline" class="s16"></md-icon>
+                <span class="title">{{api.name}}</span>
+            </div>
+        </md-button>
+    </div>
+    <!--<div style="position: absolute;bottom: 0;border-top: solid 1px #ccc;" fill-width>-->
+        <!--<div class="navigation-simple" layout="column">-->
+            <!--<md-button class="item" aria-label="inbox" ng-click="apisettings()">-->
+                <!--<div layout="row" layout-align="start center" style="color: #777">-->
+                    <!--<md-icon md-font-icon="icon-cog" class="s25"></md-icon>-->
+                    <!--<span class="title fs-15">Settings</span>-->
+                <!--</div>-->
+            <!--</md-button>-->
+        <!--</div>-->
+    <!--</div>-->
+
+</md-content>
+<!-- / SIDENAV CONTENT -->
