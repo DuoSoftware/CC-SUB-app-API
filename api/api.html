@@ -10,7 +10,7 @@
     </md-sidenav>
     <!-- / SIDENAV -->
 
-    <div id="apiMainView" class="center pos-rel" layout="column" flex>
+    <div id="apiMainView" class="center center-offset pos-rel" layout="column" flex>
         <div class="content-card content-card-offset pos-rel" layout="column" flex>
             <div flex ng-if="loadingAPI" class="preloader animate-fade-in-out">
                 <md-progress-circular></md-progress-circular>
@@ -503,7 +503,7 @@ puts response.body
                                     </div>
                                 </md-tab>
                             </md-tabs>
-                            <div class="b hover-pointer" ng-click="setBlockFull($index)" layout="row" layout-align="center center">
+                            <div class="bt hover-pointer" ng-click="setBlockFull($index)" layout="row" layout-align="center center">
                                 <md-icon md-font-icon="{{method.isBlockFull ? 'icon-chevron-up' : 'icon-chevron-down'}}"></md-icon>
                             </div>
                         </div>
@@ -512,7 +512,8 @@ puts response.body
             </md-content>
             <div ng-if="!hideInformMsg">
                 <div class="text-center p-10">
-                    <md-icon md-font-icon="icon-cloud-circle" class="fs-70 line-height-70 h-70 w-70 op-5"></md-icon>
+                    <!--<md-icon md-font-icon="icon-cloud-circle" class="fs-70 line-height-70 h-70 w-70 op-5"></md-icon>-->
+                    <img src="app/core/app_icons/api_app_icon_black.svg" alt="" style="opacity: 0.1;width: 17%">
                     <h2 class="font-accent">CloudCharge APIs</h2>
                     <div>Select an API from the list to load method details</div>
                 </div>
