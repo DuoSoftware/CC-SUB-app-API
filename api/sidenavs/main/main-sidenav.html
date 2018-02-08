@@ -3,7 +3,7 @@
 
     <div class="logo" layout="row" layout-align="start center">
         <span class="logo-icon">
-          <img src="app/core/app_icons/api_app_icon.png" alt=""/>
+          <img src="app/core/app_icons/api_app_icon_black.png" alt=""/>
         </span>
         <span class="logo-text">API</span>
     </div>
@@ -22,6 +22,7 @@
         <md-button class="item" ng-class="{'selected':selectedUrl == api.name}" aria-label="inbox" ng-click="selectedUrl_(api)" ng-repeat="api in vm.apiList" ng-if="api.name != 'Settings API' && api.name != 'Plan API' && api.name != 'Subscription-Offline' && api.name != 'Subscription-Online'">
             <div layout="row" layout-align="start center">
                 <md-icon md-font-icon="icon-cloud-outline" class="s16"></md-icon>
+                <!--<img class="sidenav-img-ico" src="app/core/app_icons/api_app_icon_black.svg" alt="">-->
                 <span class="title">{{api.name}}</span>
             </div>
         </md-button>
