@@ -547,7 +547,7 @@ puts response.body
                                                     <md-button id="hide" class="md-icon-button md-accent" ng-click="hideAccessKey(key, $index)"><md-icon md-font-icon="icon-eye-off" class="copy-icon"></md-icon><md-tooltip>Hide Key</md-tooltip> </md-button>
                                                 </div>
 
-                                                <md-button id="copyKey{{key.key}}" disabled class="md-icon-button md-accent" ng-click="copyToClipboard(key.key, key.name)"><md-icon md-font-icon="icon-content-copy" class="copy-icon" style="font-size: 18px"></md-icon><md-tooltip>Copy key</md-tooltip> </md-button>
+                                                <md-button id="copyKey{{key.key}}" disabled class="md-icon-button md-accent" ng-click="copyToClipboard2(key.key, key.name)"><md-icon md-font-icon="icon-content-copy" class="copy-icon" style="font-size: 18px"></md-icon><md-tooltip>Copy key</md-tooltip> </md-button>
                                                 <md-button class="md-icon-button md-accent" ng-disabled="resetLoading" ng-click="resetAccessKeys(key.name)"><md-progress-circular ng-if="currentlyResetting == key.name && resetLoading" style="top: -2px;right:6px"></md-progress-circular> <md-icon md-font-icon="icon-refresh"></md-icon><md-tooltip>Reset key</md-tooltip> </md-button>
                                             </div>
                                         </div>
