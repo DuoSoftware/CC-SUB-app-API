@@ -12,7 +12,7 @@
 		});
 
 	/** @ngInject */
-	function ApiController( $scope,$http,$charge, $timeout)
+	function ApiController( $scope,$http,$charge, $timeout, logHelper)
 	{
 		var vm = this;
 		var originatorEv;
@@ -707,7 +707,7 @@
 					$scope.accAccessKeysLoaded = true;
 
 					ex.app = "myAccount";
-					// logHelper.error(ex);
+					logHelper.error(ex);
 
 				});
 
@@ -717,7 +717,7 @@
 				$scope.accAccessKeysLoaded = true;
 
 				ex.app = "myAccount";
-				// logHelper.error(ex);
+				logHelper.error(ex);
 			}
 		})();
 
