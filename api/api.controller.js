@@ -12,7 +12,7 @@
 		});
 
 	/** @ngInject */
-	function ApiController( $scope,$http,$charge, $timeout, logHelper)
+	function ApiController( $scope,$http,$charge, $timeout)
 	{
 		var vm = this;
 		var originatorEv;
@@ -707,7 +707,7 @@
 					$scope.accAccessKeysLoaded = true;
 
 					ex.app = "myAccount";
-					logHelper.error(ex);
+					// logHelper.error(ex);
 
 				});
 
@@ -717,7 +717,7 @@
 				$scope.accAccessKeysLoaded = true;
 
 				ex.app = "myAccount";
-				logHelper.error(ex);
+				// logHelper.error(ex);
 			}
 		})();
 
@@ -749,7 +749,7 @@
 			document.querySelector('.keyDisplay'+key.key+' #hide').style.display='none';
 		};
 
-		$scope.copyToClipboard = function (id, elem) {
+		$scope.copyToClipboard2 = function (id, elem) {
 			$scope.coppiedTimeout = false;
 			$scope.copyStarted = true;
 			$scope.secondaryCopied = false;
@@ -763,7 +763,7 @@
 			range.selectNode(copyField);
 			window.getSelection().addRange(range);
 			document.execCommand('copy');
-			if(elem.split(' ')[0].toLowerCase() == 'primary'){
+			if(elem != null && elem.split(' ')[0].toLowerCase() == 'primary'){
 				$timeout(function(){
 					$scope.primaryCopied = true;
 				});
