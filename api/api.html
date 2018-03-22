@@ -86,7 +86,7 @@
                     </div>
                     <md-card class="api-method-card" ng-repeat="method in dummySwaggerData.paths" ng-init="outerIndex=$index">
                         <div class="api-method-title" layout="row" layout-align="space-between center" flex ng-click="toggleMethod($index, method.title)">
-                            <span class="md-subhead">{{method.body.summary}}</span>
+                            <span class="md-subhead">{{method.body.summary || method.body.operationId}}</span>
                             <md-icon md-font-icon="{{method.isOpen ? 'icon-chevron-up' : 'icon-chevron-down'}}" class="m-0"></md-icon>
                         </div>
                         <div class="api-method-type animate-fade-in-out {{method.method}}" layout="row" layout-align="start center" ng-if="method.isOpen">
