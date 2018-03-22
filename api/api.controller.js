@@ -181,15 +181,17 @@
 						var para = $scope.dummySwaggerData.definitions[required].required;
 						var prop = $scope.dummySwaggerData.definitions[required].properties;
 						var obj = {};
-						for(var i=0;i<para.length;i++){
-							if(prop[para[i]].type == 'integer' || prop[para[i]].type == 'double' || prop[para[i]].type == 'float'){
-								obj[para[i]] = 0;
-							}else if(prop[para[i]].type == 'array'){
-								obj[para[i]] = [];
-							}else if(prop[para[i]].type == 'object'){
-								obj[para[i]] = {};
-							}else{
-								obj[para[i]] = "";
+						if(para != undefined && prop != undefined){
+							for(var i=0;i<para.length;i++){
+								if(prop[para[i]].type == 'integer' || prop[para[i]].type == 'double' || prop[para[i]].type == 'float'){
+									obj[para[i]] = 0;
+								}else if(prop[para[i]].type == 'array'){
+									obj[para[i]] = [];
+								}else if(prop[para[i]].type == 'object'){
+									obj[para[i]] = {};
+								}else{
+									obj[para[i]] = "";
+								}
 							}
 						}
 						para = {};
@@ -204,6 +206,7 @@
 					});
 					$scope.loadingAPI = false;
 					$scope.hideInformMsg = true;
+					console.log($scope.dummySwaggerData);
 				}, function (errorResponse) {
 					// console.log(errorResponse);
 					$scope.loadingAPI = false;

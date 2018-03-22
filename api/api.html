@@ -128,12 +128,12 @@
 <!--{{methInHelper.reqBody}}-->
 
                                         <!--</textarea>-->
-                                        <textarea spellcheck="false" value="{{value.required}}" name="req-body{{outerIndex}}" class="req-body{{outerIndex}} req-body custom-scroll p-10 b h-100" fill-width  ng-repeat="bodyPara in method.body.parameters" ng-if="bodyPara.in == 'body'">
-{{dummySwaggerData.definitions[bodyPara.schema.$ref.split('/').pop()].required}}
+                                        <textarea spellcheck="false" value="{{value.required}}" name="req-body{{outerIndex}}" class="req-body{{outerIndex}} req-body custom-scroll p-10 b h-100" fill-width ng-repeat="bodyPara in method.body.parameters" ng-if="bodyPara.in == 'body'">
+{{dummySwaggerData.definitions[bodyPara.schema.$ref.split('/').pop().replace('~1', '/').replace('Array', '')].required}}
                                         </textarea>
                                     </div>
                                 </md-tab>
-                                <md-tab label="Responses list">
+                                <mid-tab label="Responses list">
                                     <div class="list-header" layout="row" flex>
                                         <span flex="20">Status code</span>
                                         <span flex class="pl-10">Notes</span>
@@ -144,7 +144,7 @@
                                             <span flex class="pl-10">{{value.description != "" ? value.description : "-"}}</span>
                                         </div>
                                     </div>
-                                </md-tab>
+                                </mid-tab>
                             </md-tabs>
 
                             <md-card-actions layout="row" layout-align="center center" ng-if="method.isOpen" class="m-0 p-10 light-gray">
